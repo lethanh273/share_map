@@ -1,0 +1,86 @@
+<script>
+function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    $('#lat').val(latitude);
+    $('#lon').val(longitude);
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+    $('#share').show();
+  };
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  };
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+</script>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+    <div class="span8">
+    <% if @user.shares.any? %>
+      <h3>Share (<%= @user.shares.count %>) times</h3>
+      <ol class="sharing">
+          <% @user.shares.each do |t|%>
+          <% receiver = User.find(t.receiver_id) %>
+          Share with <%= receiver.name %> position with long <%=t.longitude%> and latitude <%= t.latitude%>
+          <br>
+          <% end %>
+
+      </ol>
+      <h3>Shared (<%= Share.where(:receiver_id => @user.id).count %>) times</h3>
+         <ol class="sharing">
+          <% Share.where(:receiver_id => @user.id).each do |t|%>
+          <% user = User.find(t.user_id) %>
+          Shared by <%= user.name %> position with long <%=t.longitude%> and latitude <%= t.latitude%>
+          <br>
+          <% end %>
+
+      </ol>
+    <% end %>
+    </div>
+  
+  <div style="width:100%; height:100%" id="map"></div>
+
+<div style="position:relative;right:-20px">
+<p ><button onclick="geoFindMe()">Show my location</button></p>
+</div>
+
+<div id="out"></div>
+<div id ="share" style="position:relative;right:0px;width:300px;display:none">
+
+<%= form_tag("/users/#{@user.id}/sharing") do %>
+    <label for="counter">Share with:</label>
+    <%= hidden_field_tag :lat  %>
+    <%= hidden_field_tag :lon  %>
+    <%= select_tag 'user_id', options_for_select(User.where('id != ?', @user.id).collect{ |u| [u.name, u.id] }.push(["all", 0]))%>
+    <input type="submit" value="Share" />
+<% end %>
+
+</div>

@@ -1,0 +1,237 @@
+
+
+Started GET "/users/3/" for 127.0.0.1 at 2016-07-15 23:23:41 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36m (3.1ms)[0m  [1mSELECT COUNT(*) FROM "shares" WHERE "shares"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shares" WHERE "shares"."receiver_id" = 3
+  Rendered shared/_stats.html.erb (69.3ms)
+  [1m[36mShare Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "shares" WHERE "shares"."user_id" = ? LIMIT 1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "shares" WHERE "shares"."user_id" = ?  [["user_id", 3]]
+  [1m[36mShare Load (0.2ms)[0m  [1mSELECT "shares".* FROM "shares" WHERE "shares"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "shares" WHERE "shares"."receiver_id" = 3
+  [1m[36mShare Load (0.1ms)[0m  [1mSELECT "shares".* FROM "shares" WHERE "shares"."receiver_id" = 3[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (id != 3)[0m
+  Rendered users/show.html.erb within layouts/application (115.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'cf0940c4542e36d65880b74423956d93a3175e11' LIMIT 1
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 589ms (Views: 554.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/openlayers/OpenLayers.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/openlayers-rails.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-07-15 23:23:42 +0800
+
+
+Started GET "/users/3/" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "shares" WHERE "shares"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "shares" WHERE "shares"."receiver_id" = 3[0m
+  Rendered shared/_stats.html.erb (6.2ms)
+  [1m[35mShare Exists (0.1ms)[0m  SELECT 1 AS one FROM "shares" WHERE "shares"."user_id" = ? LIMIT 1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shares" WHERE "shares"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mShare Load (0.3ms)[0m  SELECT "shares".* FROM "shares" WHERE "shares"."user_id" = ?  [["user_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shares" WHERE "shares"."receiver_id" = 3[0m
+  [1m[35mShare Load (0.2ms)[0m  SELECT "shares".* FROM "shares" WHERE "shares"."receiver_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (id != 3)
+  Rendered users/show.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'cf0940c4542e36d65880b74423956d93a3175e11' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 44.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/openlayers/OpenLayers.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/openlayers-rails.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-07-15 23:24:48 +0800

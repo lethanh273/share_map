@@ -1,0 +1,11 @@
+<% @user ||= current_user %>
+<div class="stats">
+    <strong id="following" class="stat">
+      <%= @user.shares.count %>
+    </strong>
+    shares
+    <strong id="followers" class="stat">
+      <%= Share.where(:receiver_id => @user.id).count %>
+    </strong>
+    shared
+</div>
